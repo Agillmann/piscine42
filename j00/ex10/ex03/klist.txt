@@ -1,0 +1,8 @@
+Credentials cache: API:1066AA15-88F6-4E8A-B357-33649BA4793B
+        Principal: agillman@42.FR
+
+  Issued                Expires               Principal
+Jul  3 12:11:57 2017  Jul 10 12:11:57 2017  krbtgt/42.FR@42.FR
+Jul  3 12:11:59 2017  Jul 10 12:11:57 2017  ldap/ldap-proxy.42.fr@42.FR
+Jul  3 12:11:59 2017  Jul 10 12:11:57 2017  HTTP/home-piscine.42.fr@42.FR
+Jul  3 12:16:06 2017  Jul 10 12:11:57 2017  host/vgs-fn1.42.fr@42.FR
