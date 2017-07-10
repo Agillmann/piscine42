@@ -6,13 +6,13 @@
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/07 16:15:07 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/09 17:56:30 by agillman         ###   ########.fr       */
+/*   Updated: 2017/07/10 12:38:52 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_putsrt(char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 

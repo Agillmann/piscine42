@@ -6,7 +6,7 @@
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/08 11:27:02 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/09 17:58:12 by agillman         ###   ########.fr       */
+/*   Updated: 2017/07/10 13:12:47 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_strlen(char *str)
 	int cpt;
 
 	cpt = 0;
-	while (str[cpt])
+	while (!(str[cpt] == '\0'))
 		cpt++;
 	return (cpt);
 }
