@@ -1,13 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 21:33:31 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/09 22:03:38 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/10 11:18:43 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/10 13:44:04 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(
+int		ft_sqrt(int nbr)
+{
+	int cpt;
+
+	cpt = 0;
+	while (cpt * cpt < nbr)
+		cpt++;
+	if (cpt * cpt == nbr)
+		return (cpt);
+	else
+		return (0);
+}
