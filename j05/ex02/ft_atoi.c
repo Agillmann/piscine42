@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/10 19:06:54 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/10 20:14:24 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/08 19:38:21 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/11 12:56:45 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		atoi (char * str)
 {
-	int cpt;
-
-	cpt = 0;
-	while (str[cpt])
-	{
-		cpt++;
-	}
-	return (cpt);
-}
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
-	int				len_dest;
-	int				len_src;
-
+	int i;
+	int nb;
+	int sign;
+	
 	i = 0;
-	len_dest = ft_strlen(dest);
-	len_src = ft_strlen(src);
-	if (len_dest < len_src)
-		return (0);
+	nb = 0;
+	sign = 0;
+
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		i++;
+	if (str[i] == '-')
+	   sign = 1;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + str[i] - '0';
+		i++;
+	}
+	if (sign == 1)
+		return (-nb);
 	else
-		while (i < n)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-	return (dest);
-}
+		return (nb);
+}			

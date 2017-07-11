@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strstr.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/10 20:16:23 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/10 22:55:31 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/11 11:38:06 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/11 11:59:45 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
-{
-	int cpt;
+#include <unistd.h>
 
-	cpt = 0;
-	while (str[cpt])
-	{
-		cpt++;
-	}
-	return (cpt);
+void	ft_putchar(char str)
+{
+	write(1, &str, 1);
 }
 
-char	*ft_strstr(char *str, char *to_find);
+void	ft_putnbr(int nb)
 {
-	int cpt;
-
-	cpt = 0;
-
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = nb * -1;
+	}
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + '0');
+}
