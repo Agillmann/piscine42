@@ -5,17 +5,18 @@
 */
 
 
-char	*ft_strcpy(char *dest, char *src);
+void	ft_putchar(char str);
+void	ft_putstr(char *str);
 
 int		main(void)
 {
-	char a[] = "coucou";
-	char b[] = "salut";
-	char *res;
-	
-	res = ft_strcpy(a, b);
-/*	res = strcpy(a,b); */
-	printf("%s",res);
+	char *a = "salut" ;
+	char *b = "c'est cool";
 
+	ft_putstr(a);
+	ft_putchar('\n');
+	ft_putstr(b);
+
+/*	res = putnbr(a,b); */
 	return (0);
 }

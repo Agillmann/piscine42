@@ -1,19 +1,21 @@
 #include <stdio.h>
+/*
 #include <stdlib.h>
 #include <string.h>
+*/
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+void	ft_putchar(char str);
+void	ft_putnbr(int nb);
 
 int		main(void)
 {
-	char a[] = "coucou";
-	char b[] = "salut";
-	unsigned int n = 1;
-	char *res;
-	
-	res = ft_strncpy(a, b, n);
-//	res = strncpy(a,b,n); 
-	printf("%s",res);
+	int a = 5569141;
+	int b = 42;
 
+	ft_putnbr(a);
+	ft_putchar('\n');
+	ft_putnbr(b);
+
+/*	res = putnbr(a,b); */
 	return (0);
 }

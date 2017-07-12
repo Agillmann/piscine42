@@ -9,7 +9,7 @@ int		main(void)
 	char *a = "abc";
 	char *b = "abc";
 	char *c = "ABC";
-	char *d = "abb";
+	char *d = "abwd";
 	int res;
 		
 	res = ft_strcmp(a, b);

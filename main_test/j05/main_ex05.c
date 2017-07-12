@@ -7,7 +7,7 @@ char	*ft_strstr(char *str, char *to_find);
 int		main(void)
 {
 	char *a = "abcdefgabcde";
-	char *b = "f";
+	char *b = "";
 	char *res;
 		
 

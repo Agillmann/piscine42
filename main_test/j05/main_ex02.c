@@ -1,18 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-char	*ft_strstr(char *str, char *to_find);
+int		atoi(char *str);
 
-int		main(void)
+int 	main(void)
 {
-	char a[] = "abcdefgabcde";
-	char b[] = "g";
-	char *res;
-	
-//	res = ft_strstr(a, b, n);
-	res = strstr(a,b); 
-	printf("%s",res);
+	char *a = "422";
+	char *b = "-42";
+	char *c = "test";
+	char *d = "		55";
+	int res;
 
-	return (0);
+	res = atoi(a);
+	printf("%d\n",res);
+	res = atoi(b);
+	printf("%d\n",res);
+	res = atoi(c);
+	printf("%d\n",res);
+	res = atoi(d);
+	printf("%d\n",res);
 }
