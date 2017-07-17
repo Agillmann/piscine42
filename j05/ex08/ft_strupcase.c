@@ -6,23 +6,22 @@
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/12 11:54:44 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/12 12:01:16 by agillman         ###   ########.fr       */
+/*   Updated: 2017/07/13 15:24:18 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strupcase(char *str)
+char	*ft_strupcase(char *str)
 {
-    int cpt;
+	int cpt;
 
-    cpt = 0;
-    while (str[cpt] != '\0')
-    {
-        if ('a' <= str[cpt] && str[cpt] <= 'z')
-        {
-            str[cpt] = str[cpt] - 32;
-        }
-        cpt++;
-    }
-
-    return str;
+	cpt = 0;
+	while (str[cpt] != '\0')
+	{
+		if ('a' <= str[cpt] && str[cpt] <= 'z')
+		{
+			str[cpt] = str[cpt] - 32;
+		}
+		cpt++;
+	}
+	return (str);
 }

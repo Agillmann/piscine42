@@ -6,16 +6,9 @@
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 11:38:06 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/11 11:59:45 by agillman         ###   ########.fr       */
+/*   Updated: 2017/07/17 13:56:01 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-
-void	ft_putchar(char str)
-{
-	write(1, &str, 1);
-}
 
 void	ft_putnbr(int nb)
 {

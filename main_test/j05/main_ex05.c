@@ -4,20 +4,11 @@
 
 char	*ft_strstr(char *str, char *to_find);
 
-int		main(void)
+int		main(int argc, char **argv)
 {
-	char *a = "abcdefgabcde";
-	char *b = "";
-	char *res;
-		
+	(void)argc;
 
-	res = ft_strstr(a, b);
-	
-	printf("%s\n",res);
-	
-	res = strstr(a,b); 
-
-	printf("%s",res);
-
+	printf("my strstr : %s\n",ft_strstr(argv[1],argv[2]));
+	printf("%s\n",strstr(argv[1],argv[2]));
 	return (0);
 }

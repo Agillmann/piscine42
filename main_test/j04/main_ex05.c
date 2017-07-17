@@ -7,7 +7,7 @@ int		main(void)
 	int a = 9;
 	int b = -1;
 	int c = 0;
-	int d = 1;
+	int d = 2147483648;
 
 	int res = ft_sqrt(a);
 	printf("%d\n",res);

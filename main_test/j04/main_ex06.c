@@ -8,7 +8,7 @@ int		main(void)
 	int b = 12;
 	int c = 0;
 	int d = 1;
-	int e = -1;
+	int e = -19;
 	int res = ft_is_prime(a);
 	
 	printf("%d\n",res);

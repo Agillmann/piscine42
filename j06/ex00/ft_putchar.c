@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_uppercase.c                                  :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 21:11:28 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/13 15:57:23 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/17 19:08:16 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/17 19:09:28 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
-{
-	int cpt;
+#include <unistd.h>
 
-	cpt = 0;
-	while (str[cpt])
-	{
-		if (str[cpt] <= 32 || str[cpt] == 127)
-			return (0);
-		cpt++;
-	}
-	return (1);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

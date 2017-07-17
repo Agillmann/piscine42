@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_alpha.c                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 15:36:38 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/12 17:19:24 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/07 16:15:07 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/17 21:40:42 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_alpha(char c)
-{
-	if ('a' <= c && c <= 'z')
-		return 1;
-	if ('A' <= c && c <= 'Z')
-		return 1;
-	return 0;
-}
+void	ft_putchar(char c);
 
-int     ft_str_is_alpha(char *str)
+void	ft_putstr(char *str)
 {
-    int cpt;
+	int i;
 
-    cpt = 0;
-	if (str[cpt] == '\0')
-		return 1;
-    while (str[cpt] != '\0')
-    {
-        if (ft_is_alpha(str[cpt]) == 0)
-			return 0;
-		cpt++;
-    }
-    return (1);
+	i = 0;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

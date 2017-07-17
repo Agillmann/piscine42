@@ -6,7 +6,7 @@
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/10 19:06:54 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/11 13:00:06 by agillman         ###   ########.fr       */
+/*   Updated: 2017/07/17 14:20:46 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,16 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
 	if (len_dest < len_src)
-		return (0);
+	{
+		src[n] = '\0';
+		return (src);
+	}
 	else
 		while (i < n)
 		{
 			dest[i] = src[i];
 			i++;
 		}
+	dest[i] = '\0';
 	return (dest);
 }

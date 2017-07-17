@@ -1,21 +1,21 @@
 #include <stdio.h>
-/*
 #include <stdlib.h>
 #include <string.h>
-*/
 
 
 char	*ft_strcpy(char *dest, char *src);
 
-int		main(void)
+int		main(int argc, char **argv)
 {
-	char a[] = "coucou";
-	char b[] = "salut";
+	
+	(void)argc;
 	char *res;
 	
-	res = ft_strcpy(a, b);
-/*	res = strcpy(a,b); */
-	printf("%s",res);
+	printf("my strcpy : ");
+	res = ft_strcpy(argv[1], argv[2]);
+   	printf("%s\n", res);
+	res = strcpy(argv[1], argv[2]);
+	printf("%s", res);
 
 	return (0);
 }

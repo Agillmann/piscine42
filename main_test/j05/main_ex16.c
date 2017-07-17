@@ -2,16 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-//char	*ft_strcat(char *dest, char *src);
+char	*ft_strcat(char *dest, char *src);
 
-int		main(void)
+int		main(int ac, char *av[])
 {
-//	char *a = "salut";
+	(void)ac;	
 //	char *b = "salut";
 //	char *res = strcat(a,b);
 
-//	printf("my strcat : ");	
-//	printf("%s\n",ft_strcat(a,b));
-	printf("%s\n",strcat("salut","cest cool"));
+//	strcpy(a,"abcdef");
+	printf("my strcat : ");	
+	printf("%s\n",ft_strcat(av[1],av[2]));
+
+	printf("%s",strcat(av[1],av[2]));
 	return (0);
 }

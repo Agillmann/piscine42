@@ -7,7 +7,7 @@ int		main(void)
 	int a = 7;
 	int b = -1;
 	int c = 0;
-	int d = 1;
+	int d = 3;
 
 	int res = ft_fibonacci(a);
 	printf("%d\n",res);

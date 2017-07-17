@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_numeric.c                                    :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 15:46:28 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/12 17:38:48 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/13 11:13:47 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/13 15:59:50 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_str_is_numeric(char *str)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
-    int cpt;
+	int cpt1;
+	int cpt2;
 
-    cpt = 0;
-	if (str[cpt] == '\0')
-		return (1);
-    while (str[cpt] != '\0')
-    {
-        if (str[cpt] <= '0' || str[cpt] >= '9')
-            return (0);
-        cpt ++;
-    }
-    return (1);
+	cpt1 = 0;
+	cpt2 = 0;
+	while (dest[cpt1] != '\0')
+		cpt1++;
+	while ((cpt2 < nb))
+	{
+		if (src[cpt2] == '\0')
+		{
+			dest[cpt1] = '\0';
+			return (dest);
+		}
+		dest[cpt1] = src[cpt2];
+		cpt1++;
+		cpt2++;
+	}
+	dest[cpt1] = '\0';
+	return (dest);
 }

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_uppercase.c                                  :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 21:11:28 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/13 15:57:23 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/13 10:29:08 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/13 10:45:41 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
-	int cpt;
+	int cpt1;
+	int cpt2;
 
-	cpt = 0;
-	while (str[cpt])
+	cpt1 = 0;
+	cpt2 = 0;
+	while (dest[cpt1] != '\0')
+		cpt1++;
+	while (src[cpt2] != '\0')
 	{
-		if (str[cpt] <= 32 || str[cpt] == 127)
-			return (0);
-		cpt++;
+		dest[cpt1] = src[cpt2];
+		cpt1++;
+		cpt2++;
 	}
-	return (1);
+	dest[cpt1] = '\0';
+	return (dest);
 }

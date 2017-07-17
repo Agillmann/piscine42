@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_uppercase.c                                  :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/12 21:11:28 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/13 15:57:23 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/17 19:35:31 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/17 21:35:38 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+void	ft_putstr(char *str)
 {
-	int cpt;
+	int i;
 
-	cpt = 0;
-	while (str[cpt])
+	i = 0;
+	while (str[i])
 	{
-		if (str[cpt] <= 32 || str[cpt] == 127)
-			return (0);
-		cpt++;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (1);
+}
+
+int		main(int argc, char **argv)
+{
+	(void)argc;
+	ft_putstr(argv[0]);
+	return (0);
 }
