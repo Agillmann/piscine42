@@ -26,12 +26,10 @@ int		is_word(char *str, int cpt, int mot)
 	}
 	else if (str[cpt] >= '0' && str[cpt] <= '9')
 		return (1);
-	else if (str[cpt] == ' ' || str[cpt] == '+' || str[cpt] == '-')
-		return (0);
 	return (0);
 }
 
-char	*ft_capitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int cpt;
 	int mot;

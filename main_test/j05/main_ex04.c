@@ -4,18 +4,13 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
-int		main(void)
+int		main(int argc, char *argv[])
 {
-	char a[] = "";
-	char b[] = "salut";
-	unsigned int n = 2;
-	char *res;
-	
-	printf("my strncpy : ");
-	res = ft_strncpy(a, b, n);
-	printf("%s \n",res);
-	res = strncpy(a,b,n); 
-	printf("%s",res);
+
+ 	(void)argc;
+	printf("%s %s %d\n", argv[1], argv[2], atoi(argv[3]));
+	printf("my strncpy: %s\n",  ft_strncpy(argv[1], argv[2], atoi(argv[3])));
+	printf("%s \n", strncpy(argv[1], argv[2], atoi(argv[3])));
 
 	return (0);
 }

@@ -32,13 +32,15 @@ char	*ft_strcpy(char *dest, char *src)
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);
 	if (len_dest < len_src)
-		return (src);
+		return (0);
 	else
-		while (dest[i] != '\0')
+	{
+		while (src[i] != '\0')
 		{
 			dest[i] = src[i];
 			i++;
 		}
-	dest[i] = '\0';
-	return (dest);
+		dest[i] = '\0';
+		return (dest);
+	}
 }

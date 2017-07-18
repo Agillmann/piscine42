@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <string.h>
 #include <stdio.h>
 
 void	ft_putchar(char c)
@@ -28,39 +29,6 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
-}
-
-int        ft_strlen(char *str)
-{
-	int cpt;
-
-	cpt = 0;
-	while (str[cpt])
-	{
-		cpt++;
-	}
-	return (cpt);
-}
-
-char    *ft_strcpy(char *dest, char *src)
-{
-	int i;
-	int len_dest;
-	int len_src;
-
-	i = 0;
-	len_dest = ft_strlen(dest);
-	len_src = ft_strlen(src);
-	if (len_dest < len_src)
-		return (src);
-	else
-		while (dest[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-	dest[i] = '\0';
-	return (dest);
 }
 
 int        ft_strcmp(char *s1, char *s2)
@@ -91,22 +59,19 @@ int        ft_strcmp(char *s1, char *s2)
 	}
 }
 
-int		main(int argc, char **argv)
+int		main(int argc, char *argv[])
 {
 	int i;
-	char tmp[argc];
+	char *tmp;
 
 	i = 1;
 	while (i < argc - 1)
 	{
 		if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 		{
-			printf("argv[i] = %s argv[i + 1] = %s | ",argv[i],argv[i+1]);
-			
-			ft_strcpy(tmp, argv[i + 1]);
-			printf("tmp = %s | ", tmp);
-			ft_strcpy(argv[i + 1], argv[i]);
-			ft_strcpy(argv[i], tmp);
+			tmp = argv[i];
+			argv[i] = argv[i+1];
+			argv[i+1] = tmp;
 			i = 1;
 		}
 		else
@@ -116,7 +81,8 @@ int		main(int argc, char **argv)
 	while (i < argc)
 	{
 		ft_putstr(argv[i]);
-		ft_putchar(' ');
+		ft_putchar('\n');
 		i++;
 	}
+	return (0);
 }
