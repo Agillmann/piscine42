@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/10 17:24:52 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/19 15:48:51 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/19 17:55:24 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/19 17:57:20 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <stdlib.h>
+
+int		ft_strlen(char *str)
 {
-	int i;
+	int cpt;
+
+	cpt = 0;
+	while (str[cpt])
+	{
+		cpt++;
+	}
+	return (cpt);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*tmp;
+	int		len;
+	int		i;
 
 	i = 0;
-	while (dest[i] != '\0' || src[i] != '\0')
+	len = ft_strlen(src);
+	if (NULL == (tmp = (char *)malloc(sizeof(char) * len)))
+		return (tmp);
+	while (i <= len)
 	{
-		dest[i] = src[i];
+		tmp[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (tmp);
 }

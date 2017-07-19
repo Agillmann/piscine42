@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/10 17:24:52 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/19 15:48:51 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/19 18:22:49 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/19 18:24:46 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <stdlib.h>
+#include <stdio.h>
+
+int		ft_ultimate_range(int **range, int min, int max)
 {
 	int i;
+	int len;
+	int *tab;
 
+	if (min >= max)
+		return (0);
+	len = max - min;
+	if (NULL == (tab = (int *)malloc(sizeof(int) * len)))
+		return (0);
 	i = 0;
-	while (dest[i] != '\0' || src[i] != '\0')
+	while (i < len)
 	{
-		dest[i] = src[i];
+		tab[i] = min;
+		min++;
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	*range = tab;
+	return (len);
 }

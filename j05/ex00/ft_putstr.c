@@ -6,11 +6,11 @@
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/11 11:34:03 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/17 13:55:19 by agillman         ###   ########.fr       */
+/*   Updated: 2017/07/19 11:16:35 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void 	ft_putchar(char c);
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
