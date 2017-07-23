@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/19 17:55:24 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/19 17:57:20 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/22 16:20:18 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/23 19:58:14 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+char	**ft_split_whitespaces(char *str);
 
-int		ft_strlen(char *str)
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
-	int cpt;
-
-	cpt = 0;
-	while (str[cpt])
-	{
-		cpt++;
-	}
-	return (cpt);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*tmp;
-	int		len;
-	int		i;
+	int i;
 
 	i = 0;
-	len = ft_strlen(src);
-	if (NULL == (tmp = (char *)malloc(sizeof(char) * len)))
-		return (tmp);
-	while (i <= len)
+	while (str[i])
 	{
-		tmp[i] = src[i];
+		ft_putchar(str[i]);
 		i++;
 	}
-	return (tmp);
+}
+
+void	ft_print_words_tables(char **tab)
+{
+	while (*tab)
+	{
+		ft_putstr(*tab++);
+		ft_putchar('\n');
+	}
 }

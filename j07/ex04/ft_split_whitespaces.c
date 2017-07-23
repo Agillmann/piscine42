@@ -5,109 +5,112 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agillman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/19 13:16:01 by agillman          #+#    #+#             */
-/*   Updated: 2017/07/20 21:47:13 by agillman         ###   ########.fr       */
+/*   Created: 2017/07/22 16:23:51 by agillman          #+#    #+#             */
+/*   Updated: 2017/07/23 21:38:32 by agillman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
+#define F NULL
 
-int		ft_nb_words(char *str)
+void	ft_init_var(int *a, int *b, int *c)
 {
-	int cpt;
+	*a = 0;
+	*b = 0;
+	*c = 0;
+}
+
+char	**ft_alloc_tab(char **tab, char *str)
+{
 	int i;
+	int nb_word;
 
-	cpt = 0;
-	i = 0;
-
+	ft_init_var(&i, &nb_word, &nb_word);
 	while (str[i] != '\0')
-	{	
+	{
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		{	
 			i++;
-		}
-		if (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
+		if (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
 		{
-			cpt++;
-			while (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
+			nb_word++;
+			i++;
+			while (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+					&& str[i])
 				i++;
 		}
 	}
-	return (cpt);
-}
-
-int		ft_len_word(char *str)
-{
-	int cpt;
-	int i;
-
-	cpt = 0;
-	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-	{	
-		i++;
-	}
-	if (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
-	{
-		while (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
-		{	
-			i++;
-			cpt++;
-		}
-		return(cpt);
-	}
-	return (0);
-}
-
-int		ft_alloc_tab(char **tab, char *argv)
-{
-	tab = (char **)malloc(sizeof(char) * ft_nb_words(argv));
-	if (tab == NULL)
+	if (F == (tab = (char **)malloc(sizeof(char *) * (nb_word + 1))))
 		return (0);
-	return (1);
+	return (tab);
 }
 
+char	**ft_alloc_word(char **tab, char *str)
+{
+	int i;
+	int j;
+	int len;
 
-int		ft_alloc_word(char **tab, char *str, int i)
-{	
+	ft_init_var(&i, &j, &len);
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v')
+		i++;
 	while (str[i])
 	{
-		tab[i] = (char *)malloc(sizeof(char) * (ft_len_word(str) + 1));
-		if (tab == NULL)
-			return (0);
-		return (1);
+		if (!(str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
+					|| str[i] == '\0'))
+		{
+			len++;
+			if (str[i + 1] == ' ' || str[i + 1] == '\t' || str[i + 1] == '\n'
+					|| str[i + 1] == '\0')
+			{
+				if (F == (tab[j] = (char *)malloc(sizeof(char *) * (len + 1))))
+					return (0);
+				len = 0;
+				j++;
+			}
+		}
 		i++;
 	}
-	return (0);
+	return (tab);
+}
+
+char	**ft_add_char(char **tab, char *str)
+{
+	int i;
+	int j;
+	int k;
+
+	ft_init_var(&i, &j, &k);
+	while (str[k] == ' ' || str[k] == '\t' || str[k] == '\n')
+		k++;
+	while (str[k] != '\0')
+	{
+		tab[i][j] = str[k];
+		k++;
+		j++;
+		if ((str[k] == ' ' || str[k] == '\t' || str[k] == '\n')
+				|| str[k] == '\0')
+		{
+			tab[i][j] = '\0';
+			j = 0;
+			i++;
+			while ((str[k] == ' ' || str[k] == '\t' || str[k] == '\n')
+					&& str[k])
+				k++;
+		}
+	}
+	tab[i] = 0;
+	return (tab);
 }
 
 char	**ft_split_whitespaces(char *str)
 {
-	int i = 0;
-	char **tab = NULL;
+	char **tab;
 
-	if (ft_alloc_tab(tab,str) == 0)
-		return (NULL);
-	while(i < ft_nb_words(str))
-	{
-		if (ft_alloc_word(tab,str,i) == 0)
-			return (NULL);
-		i++;
-	}
-	tab[ft_nb_words(str)][i] = 0;
-	return(tab);
-}
-
-int		main(int argc, char *argv[])
-{
-	(void)argc;
-	//	char **tab
-
-	printf("nb_word = %d \n", ft_nb_words(argv[1]));
-	printf("alloc_tab = %d \n", ft_alloc_tab(argv,*argv));
-	printf("len_word = %d \n", ft_len_word(argv[1]));
-	printf("alloc_word = %d \n", ft_alloc_word(argv,argv[1],6));
-//	printf("ft_split_whitespaces = %s \n", ft_split_whitespaces(*argv));
+	tab = F;
+	tab = ft_alloc_tab(tab, str);
+	tab = ft_alloc_word(tab, str);
+	tab = ft_add_char(tab, str);
+	return (tab);
 }
